@@ -12,8 +12,8 @@ expected = 0  # Actual label for row 799
 with open(RESPONSES_FILE) as f:
     model_preds = json.load(f)
 
-last_label_stats = defaultdict(list)  # Maps last label → list of (pred == expected)
-last_two_label_stats = defaultdict(list)  # Maps (last1, last2) → list of (pred == expected)
+last_label_stats = defaultdict(list)  # Maps last label: list of (pred == expected)
+last_two_label_stats = defaultdict(list)  # Maps (last1, last2): list of (pred == expected)
 
 for i in range(50):
     file_path = os.path.join(INSTRUCTION_DIR, f"instruction_{i}.txt")

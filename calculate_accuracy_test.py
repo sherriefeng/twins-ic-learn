@@ -27,9 +27,6 @@ for n in range(4, 25, 2):
             print(f"Missing {file_path}, skipping.")
             continue
 
-        # trial_outputs = []
-
-        # for _ in range(3):  # 3 trials
         with open(file_path, "r") as file:
             prompt_content = file.read()
 
@@ -48,13 +45,6 @@ for n in range(4, 25, 2):
         except Exception as e:
             print(f"{file_path} trial failed: {e}")
             continue
-
-        # if len(trial_outputs) == 0:
-        #     all_preds.append(None)
-        # else:
-        #     avg_pred = mean(trial_outputs)
-        #     final_pred = 1 if avg_pred >= 0.5 else 0
-        #     all_preds.append(final_pred)
 
     # Calculate accuracy
     valid_preds = [p for p in all_preds if p is not None]
